@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @version 1.0 10/21/15
  */
 
-public class ChatView 
+public class ChatView 	 
 {
 	/**
 	 * Displays the input from the user.
