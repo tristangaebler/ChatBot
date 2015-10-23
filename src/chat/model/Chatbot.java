@@ -25,8 +25,6 @@ public class Chatbot
 		this.politicalTopicList = new ArrayList<String>(); 
 		this.userName = userName;
 		this.content = "Blah";
-		
-		
 	}
 	
 	private void buildMemesList()
