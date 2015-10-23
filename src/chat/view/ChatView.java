@@ -1,6 +1,8 @@
 package chat.view;
 
 import javax.swing.JOptionPane;
+
+
 /**
  * Popup display to get input and show output.
  * @author Tristan Gaebler
@@ -25,9 +27,7 @@ public class ChatView
 	 */
 	public String grabInput(String displayText)
 	{
-		String userAnswer = " ";
-		
-		JOptionPane.showInputDialog(null, displayText);
+		String userAnswer = JOptionPane.showInputDialog(null, displayText);
 		
 		return userAnswer;
 	}
