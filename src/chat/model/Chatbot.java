@@ -24,12 +24,24 @@ public class Chatbot
 		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>(); 
 		this.userName = userName;
-		this.content = "Blah";
+		this.content = "theoretical physics";
+		
+		buildMemesList();
+		buildPoliticalTopicsList();
 	}
 	
 	private void buildMemesList()
 	{
-		
+		this.memesList.add("cute animals");
+		this.memesList.add("doge");
+		this.memesList.add("what if i told you");
+		this.memesList.add("aliens");
+		this.memesList.add("bad luck brian");
+		this.memesList.add("rare pepe");
+		this.memesList.add("spuderman");
+		this.memesList.add("me gusta");
+		this.memesList.add("troll");
+		this.memesList.add("highschool teacher");
 	}
 	
 	private void buildPoliticalTopicsList()
@@ -68,7 +80,7 @@ public class Chatbot
 		if(currentInput.toLowerCase().contains(content.toLowerCase()))
 		{
 			hasContent = true;
-		}
+		}		
 		
 		return hasContent;
 	}
@@ -92,7 +104,19 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		return false;
+		boolean hasMeme = false;
+		
+		for(String currentMeme: memesList)
+		{
+			
+		}
+		
+		if(currentInput.equals(memesList))
+		{
+			hasMeme = true;
+		}
+		
+		return hasMeme;
 	}
 	
 	/**
@@ -110,7 +134,7 @@ public class Chatbot
 	 */
 	public String getContent()
 	{
-		return null;
+		return content;
 	}
 	
 	/**
@@ -119,7 +143,7 @@ public class Chatbot
 	 */
 	public ArrayList<String> getMemesList()
 	{
-		return null;
+		return memesList;
 	}
 	
 	/**

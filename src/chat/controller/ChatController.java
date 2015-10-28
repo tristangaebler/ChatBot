@@ -23,5 +23,23 @@ public class ChatController
 	public void start()
 	{
 		myDisplay.showOutput("Hello " + myChatbot.getUserName());
+		chat();
+		
+	}
+	
+	private void chat()
+	{
+		//=======REMEMBER========
+		//Cody's variables are not named the same as yours.
+		String conversation = myDisplay.grabInput("What would you like too talk about?");
+		
+		while(myChatbot.lengthChecker(conversation))
+		{
+			if(myChatbot.contentChecker(conversation))
+			{
+				myDisplay.showOutput("wow, you are interested in " + myChatbot.getContent() + ". Me too!");
+			}
+			conversation = myDisplay.grabInput(conversation);
+		}
 	}
 }
