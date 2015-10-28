@@ -63,7 +63,14 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String currentInput)
 	{
-		return false;
+		boolean hasContent = false;
+		
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
+		{
+			hasContent = true;
+		}
+		
+		return hasContent;
 	}
 	
 	/**
