@@ -92,8 +92,17 @@ public class Chatbot
 	 * @return Whether the String is contained in the ArrayList.
 	 */
 	public boolean politicalTopicChecker(String currentInput)
-	{
-		return false;
+	{	
+		boolean hasTopic = false;
+		
+		for(String currentTopic: politicalTopicList)
+		{
+			if(currentTopic.equalsIgnoreCase(currentInput))
+			{
+				hasTopic = true;
+			}
+		}
+		return hasTopic;
 	}
 	
 	
@@ -108,7 +117,7 @@ public class Chatbot
 		
 		for(String currentMeme: memesList)
 		{
-			if(currentMeme.equalsIgnoreCase(currentInput))
+			if(currentInput.toLowerCase().contains(currentMeme.toLowerCase()))
 			{
 				hasMeme = true;
 			}

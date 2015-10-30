@@ -39,6 +39,10 @@ public class ChatController
 			{
 				myDisplay.showOutput("wow, you are interested in " + myChatbot.getContent() + ". Me too!");
 			}
+			else if(myChatbot.memeChecker(conversation))
+			{
+				myDisplay.showOutput("I didn't know you liked memes");
+			}
 			conversation = myDisplay.grabInput(conversation);
 		}
 	}
