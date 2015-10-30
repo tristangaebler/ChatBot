@@ -6,7 +6,7 @@ import chat.model.Chatbot;
 /**
  * Application controller for the Chatbot project.
  * @author Tristan Gaebler
- * @version 1.11 10/21/15 Imported ChatVeiw. Fixed the error.
+ * @version 1.2 10/21/15 Added control structures for the chat method
  */
 public class ChatController 
 {
