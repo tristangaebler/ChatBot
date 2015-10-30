@@ -108,12 +108,10 @@ public class Chatbot
 		
 		for(String currentMeme: memesList)
 		{
-			
-		}
-		
-		if(currentInput.equals(memesList))
-		{
-			hasMeme = true;
+			if(currentMeme.equalsIgnoreCase(currentInput))
+			{
+				hasMeme = true;
+			}
 		}
 		
 		return hasMeme;
