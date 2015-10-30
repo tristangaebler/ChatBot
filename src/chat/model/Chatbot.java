@@ -46,7 +46,14 @@ public class Chatbot
 	
 	private void buildPoliticalTopicsList()
 	{
-		
+		this.politicalTopicList.add("immigration");
+		this.politicalTopicList.add("minimum wage");
+		this.politicalTopicList.add("wall street");
+		this.politicalTopicList.add("isis and the middle east");
+		this.politicalTopicList.add("Iran");
+		this.politicalTopicList.add("taxes");
+		this.politicalTopicList.add("benghazi");
+		this.politicalTopicList.add("speaker of the house");
 	}
 	
 	/**

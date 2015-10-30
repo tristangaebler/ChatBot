@@ -43,6 +43,10 @@ public class ChatController
 			{
 				myDisplay.showOutput("I didn't know you liked memes");
 			}
+			else if(myChatbot.politicalTopicChecker(conversation))
+			{
+				myDisplay.showOutput("Woah you wanna talk about" + myChatbot.getContent() + ". we just met..");
+			}
 			conversation = myDisplay.grabInput(conversation);
 		}
 	}
