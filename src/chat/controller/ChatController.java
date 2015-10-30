@@ -45,7 +45,7 @@ public class ChatController
 			}
 			else if(myChatbot.politicalTopicChecker(conversation))
 			{
-				myDisplay.showOutput("Woah you wanna talk about" + myChatbot.getContent() + ". we just met..");
+				myDisplay.showOutput("Woah you wanna talk about that. We just met!");
 			}
 			conversation = myDisplay.grabInput(conversation);
 		}
