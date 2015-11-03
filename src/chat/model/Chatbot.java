@@ -192,11 +192,19 @@ public class Chatbot
 				{
 					nextConversation = "That meme is the dankest! What else?";
 				}
+				else
+				{
+					nextConversation = "TEST FAILED MEMES";
+				}
 				break;
 			case 1:
 				if(politicalTopicChecker(currentChat))
 				{
 					nextConversation = "I agree and disagree. What else?";
+				}				
+				else
+				{
+					nextConversation = "TEST FAILED POLITICS";
 				}
 				break;
 			case 2:
@@ -204,11 +212,19 @@ public class Chatbot
 				{
 					nextConversation = "Wow words";
 				}
+				else
+				{
+					nextConversation = "TEST FAILED CONTENT";
+				}
 				break;
 			case 3:
 				if(currentChat.length() > 20)
 				{
 					nextConversation = "You typed less than 20 words";
+				}
+				else
+				{
+					nextConversation = "Test failed words";
 				}
 				break;
 			case 4:
