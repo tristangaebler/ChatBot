@@ -177,4 +177,52 @@ public class Chatbot
 	{
 		
 	}
+	
+	public String processConversation(String currentChat)
+	{
+		String nextConversation = "oh, well that's awkward...we have nothing to talk about";
+		
+		//Generates random numbers between 0 and 4. 
+		int randomTopic = (int) (Math.random() * 5);
+		
+		switch (randomTopic)
+		{
+			case 0:
+				if(memeChecker(currentChat))
+				{
+					nextConversation = "That meme is the dankest! What else?";
+				}
+				break;
+			case 1:
+				if(politicalTopicChecker(currentChat))
+				{
+					nextConversation = "I agree and disagree. What else?";
+				}
+				break;
+			case 2:
+				if(contentChecker(currentChat))
+				{
+					nextConversation = "Wow words";
+				}
+				break;
+			case 3:
+				if(currentChat.length() > 20)
+				{
+					nextConversation = "You typed less than 20 words";
+				}
+				break;
+			case 4:
+				nextConversation = "What else do you want to talk about?";
+				break;
+			default:
+				nextConversation = "Is this real life????";
+					break;
+		}
+		return nextConversation;
+	}
 }
+
+
+
+
+

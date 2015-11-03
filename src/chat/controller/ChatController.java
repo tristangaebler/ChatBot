@@ -27,6 +27,7 @@ public class ChatController
 		
 	}
 	
+	
 	private void chat()
 	{
 		//=======REMEMBER========
@@ -35,19 +36,8 @@ public class ChatController
 		
 		while(myChatbot.lengthChecker(conversation))
 		{
-			if(myChatbot.contentChecker(conversation))
-			{
-				myDisplay.showOutput("wow, you are interested in " + myChatbot.getContent() + ". Me too!");
-			}
-			else if(myChatbot.memeChecker(conversation))
-			{
-				myDisplay.showOutput("I didn't know you liked memes");
-			}
-			else if(myChatbot.politicalTopicChecker(conversation))
-			{
-				myDisplay.showOutput("Woah you wanna talk about that. We just met!");
-			}
-			conversation = myDisplay.grabInput(conversation);
+			conversation = myDisplay.grabInput(myChatbot.processConversation(conversation));
+			
 		}
 	}
 }
