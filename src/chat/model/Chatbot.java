@@ -185,6 +185,7 @@ public class Chatbot
 		//Generates random numbers between 0 and 4. 
 		int randomTopic = (int) (Math.random() * 5);
 		
+		//This is going to pick a random test. It might fail.
 		switch (randomTopic)
 		{
 			case 0:
