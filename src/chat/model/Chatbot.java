@@ -54,7 +54,23 @@ public class Chatbot
 		this.politicalTopicList.add("taxes");
 		this.politicalTopicList.add("benghazi");
 		this.politicalTopicList.add("speaker of the house");
-	}
+		this.politicalTopicList.add("election");
+		this.politicalTopicList.add("demoract");
+		this.politicalTopicList.add("republican");
+		this.politicalTopicList.add("liberal");
+		this.politicalTopicList.add("conservative");
+		this.politicalTopicList.add("Trump");
+		this.politicalTopicList.add("Clinton");
+		this.politicalTopicList.add("BIden");
+		this.politicalTopicList.add("Carson");
+		this.politicalTopicList.add("Rubio");
+		this.politicalTopicList.add("Fiorina");
+		this.politicalTopicList.add("Sanders");
+		this.politicalTopicList.add("vote");
+		this.politicalTopicList.add("11/8/2016");
+		
+		
+}
 	
 	/**
 	 * Checks the length of the supplied string. Returns false if the supplied String is empty or null,
