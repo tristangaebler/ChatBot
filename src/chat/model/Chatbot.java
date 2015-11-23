@@ -61,16 +61,13 @@ public class Chatbot
 		this.politicalTopicList.add("conservative");
 		this.politicalTopicList.add("Trump");
 		this.politicalTopicList.add("Clinton");
-		this.politicalTopicList.add("BIden");
+		this.politicalTopicList.add("Biden");
 		this.politicalTopicList.add("Carson");
 		this.politicalTopicList.add("Rubio");
 		this.politicalTopicList.add("Fiorina");
 		this.politicalTopicList.add("Sanders");
-		this.politicalTopicList.add("vote");
-		this.politicalTopicList.add("11/8/2016");
-		
-		
-}
+		this.politicalTopicList.add("11/8/2016");	
+	}
 	
 	/**
 	 * Checks the length of the supplied string. Returns false if the supplied String is empty or null,
