@@ -18,7 +18,12 @@ public class ChatFrame extends JFrame
 	
 	private void setUpFrame()
 	{
-		
+		this.setContentPane(basePanel);
+		this.setSize(500, 500);
+		this.setBackground(Color.RED);
+		this.setTitle("Chat Window");
+		this.setResizable(false);
+		this.setVisible(true);
 	}
 	
 	public ChatController getBaseController()
