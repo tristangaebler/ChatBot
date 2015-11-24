@@ -30,7 +30,7 @@ public class Chatbot
 		buildPoliticalTopicsList();
 	}
 	
-	private void buildMemesList()
+	private void buildMemesList() 
 	{
 		this.memesList.add("cute animals");
 		this.memesList.add("doge");
@@ -42,6 +42,8 @@ public class Chatbot
 		this.memesList.add("me gusta");
 		this.memesList.add("troll");
 		this.memesList.add("highschool teacher");
+		this.memesList.add("tai lopez");
+		this.memesList.add("lamborghini");
 	}
 	
 	private void buildPoliticalTopicsList()
