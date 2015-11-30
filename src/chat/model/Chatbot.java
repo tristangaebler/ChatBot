@@ -193,7 +193,7 @@ public class Chatbot
 		
 	}
 	
-	public boolean keybaordMashChecker(String currentInput)
+	public boolean keyboardMashChecker(String currentInput)
 	{
 		boolean mashTyping = false;
 		
@@ -201,7 +201,20 @@ public class Chatbot
 		{
 			mashTyping = true;
 		}
+		
 		return mashTyping;		
+	}
+	
+	public boolean quitChecker(String currentInput)
+	{
+		boolean isQuiting = false;
+		
+		if(currentInput.equals("quit") || currentInput.equals("exit"))
+		{
+			isQuiting = true;
+		}
+		
+		return isQuiting;
 	}
 	
 	public String processConversation(String currentChat)
