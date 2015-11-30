@@ -11,6 +11,8 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private ArrayList<String> memesList;
+
+
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
@@ -278,6 +280,20 @@ public class Chatbot
 		return nextConversation;
 	}
 	
+	public void setMemesList(ArrayList<String> memesList)
+	{
+		this.memesList = memesList;
+	}
+
+	public void setPoliticalTopicList(ArrayList<String> politicalTopicList)
+	{
+		this.politicalTopicList = politicalTopicList;
+	}
+
+	public void setUserName(String userName)
+	{
+		this.userName = userName;
+	}
 
 }
 
