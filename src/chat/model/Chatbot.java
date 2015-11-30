@@ -197,10 +197,10 @@ public class Chatbot
 	{
 		boolean mashTyping = false;
 		
-		if(currentInput.equals("sdf") || currentInput.equals("S.D.F") || currentInput.equals("derf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals(",./"))
+		if(currentInput.equals("sdf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals(",./"))
 		{
 			mashTyping = true;
-		}
+		} 
 		
 		return mashTyping;		
 	}
