@@ -25,7 +25,7 @@ public class ChatFrameTest
 	{
 		baseFrame = null;
 		baseController = null;
-	}
+	} 
 
 	@Test
 	public void testChatFrame()

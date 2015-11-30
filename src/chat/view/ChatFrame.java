@@ -9,7 +9,8 @@ public class ChatFrame extends JFrame
 	private ChatController baseController;
 	private ChatPanel basePanel;
 	
-	private ChatFrame(ChatController baseController)
+	//If errors occur, try changing to private again
+	public ChatFrame(ChatController baseController)
 	{
 		this.baseController = baseController;
 		basePanel = new ChatPanel(baseController);

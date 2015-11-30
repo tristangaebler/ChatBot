@@ -201,6 +201,7 @@ public class Chatbot
 		int randomTopic = (int) (Math.random() * 5);
 		
 		//This is going to pick a random test. It might fail.
+		//Can we please change this so it doesn't always fail
 		switch (randomTopic)
 		{
 			case 0:

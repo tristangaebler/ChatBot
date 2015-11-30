@@ -12,6 +12,7 @@ public class ChatPanel extends JPanel
 	private JTextField chatTextField;
 	private SpringLayout baseLayout;
 	private JTextArea chatTextArea;
+	private JLabel promptLabel;
 	
 	public ChatPanel(ChatController baseController)
 	{
@@ -21,6 +22,7 @@ public class ChatPanel extends JPanel
 		chatButton = new JButton("Click to chat");
 		chatTextField = new JTextField("Type to chat");
 		chatTextArea = new JTextArea("Chat Text Area");
+		promptLabel = new JLabel("Chat me away");
 
 		
 		setUpPanel();
@@ -35,6 +37,9 @@ public class ChatPanel extends JPanel
 		this.add(chatTextArea);
 		this.add(chatButton);
 		this.add(chatTextField);
+		this.add(promptLabel);
+		chatTextField.setToolTipText("Type here");
+		chatTextArea.setEnabled(false);
 	}
 	
 	private void setUpLayout()
@@ -47,8 +52,26 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, chatTextArea, 0, SpringLayout.EAST, chatTextField);
 	}
 	
+	
 	private void setUpListeners()
 	{
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				
+			}
 		
+		});
+	}
+	
+	public JTextField getChatTextField()
+	{
+		return chatTextField;
+	}
+
+	public void setChatTextField(JTextField chatTextField)
+	{
+		this.chatTextField = chatTextField;
 	}
 }
