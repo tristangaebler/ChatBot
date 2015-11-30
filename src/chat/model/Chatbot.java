@@ -193,6 +193,17 @@ public class Chatbot
 		
 	}
 	
+	public boolean keybaordMashChecker(String currentInput)
+	{
+		boolean mashTyping = false;
+		
+		if(currentInput.equals("sdf") || currentInput.equals("S.D.F") || currentInput.equals("derf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals(",./"))
+		{
+			mashTyping = true;
+		}
+		return mashTyping;		
+	}
+	
 	public String processConversation(String currentChat)
 	{
 		String nextConversation = "oh, well that's awkward...we have nothing to talk about";
@@ -253,6 +264,8 @@ public class Chatbot
 		}
 		return nextConversation;
 	}
+	
+
 }
 
 
