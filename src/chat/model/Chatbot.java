@@ -30,7 +30,7 @@ public class Chatbot
 		buildPoliticalTopicsList();
 	}
 	
-	private void buildMemesList()
+	private void buildMemesList() 
 	{
 		this.memesList.add("cute animals");
 		this.memesList.add("doge");
@@ -42,6 +42,8 @@ public class Chatbot
 		this.memesList.add("me gusta");
 		this.memesList.add("troll");
 		this.memesList.add("highschool teacher");
+		this.memesList.add("tai lopez");
+		this.memesList.add("lamborghini");
 	}
 	
 	private void buildPoliticalTopicsList()
@@ -191,6 +193,30 @@ public class Chatbot
 		
 	}
 	
+	public boolean keyboardMashChecker(String currentInput)
+	{
+		boolean mashTyping = false;
+		
+		if(currentInput.equals("sdf") || currentInput.equals("S.D.F") || currentInput.equals("derf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals(",./"))
+		{
+			mashTyping = true;
+		}
+		
+		return mashTyping;		
+	}
+	
+	public boolean quitChecker(String currentInput)
+	{
+		boolean isQuiting = false;
+		
+		if(currentInput.equals("quit") || currentInput.equals("exit"))
+		{
+			isQuiting = true;
+		}
+		
+		return isQuiting;
+	}
+	
 	public String processConversation(String currentChat)
 	{
 		String nextConversation = "oh, well that's awkward...we have nothing to talk about";
@@ -199,6 +225,7 @@ public class Chatbot
 		int randomTopic = (int) (Math.random() * 5);
 		
 		//This is going to pick a random test. It might fail.
+		//Can we please change this so it doesn't always fail
 		switch (randomTopic)
 		{
 			case 0:
@@ -250,6 +277,8 @@ public class Chatbot
 		}
 		return nextConversation;
 	}
+	
+
 }
 
 

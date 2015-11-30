@@ -38,7 +38,8 @@ public class ChatPanelTest
 	@Test
 	public void testSetupPanel()
 	{
-		assertTrue("Tip/Hint not set", basePanel.getTextField().getToolTipText().length() > 4);
+		//Change the getTextField() to getChatTextField() to fix the error
+		assertTrue("Tip/Hint not set", basePanel.getChatTextField().getToolTipText().length() > 4);
 		assertTrue("Incorrect layout manager", basePanel.getLayout() instanceof javax.swing.SpringLayout);
 		assertTrue("Minimum number of components not met", basePanel.getComponents().length >= 4);
 	}
