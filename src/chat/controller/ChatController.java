@@ -11,28 +11,28 @@ import chat.view.ChatFrame;
  */
 public class ChatController 
 {
-	private ChatView myDisplay;
+	private ChatView ChatView;
 	private Chatbot myChatbot;
 	private ChatFrame baseFrame;
-	
+
 	public ChatController()
 	{
-		myDisplay = new ChatView();
-		String userName = myDisplay.grabInput("What is your name?");
+		ChatView = new ChatView();
+		String userName = ChatView.grabInput("What is your name?");
 		myChatbot = new Chatbot(userName);
 		baseFrame = new ChatFrame(this);
 	}
 	
 	public void start()
 	{
-		myDisplay.showOutput("Hello " + myChatbot.getUserName());
+		ChatView.showOutput("Hello " + myChatbot.getUserName());
 		chat();
 		
 	}
 	
 	private void shutDown()
 	{
-		myDisplay.showOutput("Goodbye" + myChatbot.getUserName() + " it has been a pleasure");
+		ChatView.showOutput("Goodbye" + myChatbot.getUserName() + " it has been a pleasure");
 		System.exit(0);
 	}
 	
@@ -40,12 +40,43 @@ public class ChatController
 	{
 		//=======REMEMBER========
 		//Cody's variables are not named the same as yours.
-		String conversation = myDisplay.grabInput("What would you like too talk about?");
+		String conversation = ChatView.grabInput("What would you like too talk about?");
 		
 		while(myChatbot.lengthChecker(conversation))
 		{
-			conversation = myDisplay.grabInput(myChatbot.processConversation(conversation));
+			conversation = ChatView.grabInput(myChatbot.processConversation(conversation));
 			
 		}
 	}
+
+	public ChatView getChatView()
+	{
+		return ChatView;
+	}
+
+	public void setChatView(ChatView chatView)
+	{
+		ChatView = chatView;
+	}
+	
+	public Chatbot getMyChatbot()
+	{
+		return myChatbot;
+	}
+
+	public void setMyChatbot(Chatbot myChatbot)
+	{
+		this.myChatbot = myChatbot;
+	}
+
+	public ChatFrame getBaseFrame()
+	{
+		return baseFrame;
+	}
+
+	public void setBaseFrame(ChatFrame baseFrame)
+	{
+		this.baseFrame = baseFrame;
+	}
+
 }
