@@ -30,6 +30,12 @@ public class ChatController
 		
 	}
 	
+	private void shutDown()
+	{
+		myDisplay.showOutput("Goodbye" + myChatbot.getUserName() + " it has been a pleasure");
+		System.exit(0);
+	}
+	
 	private void chat()
 	{
 		//=======REMEMBER========
