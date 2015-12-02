@@ -11,8 +11,6 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private ArrayList<String> memesList;
-
-
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
@@ -183,7 +181,7 @@ public class Chatbot
 	 */
 	public ArrayList<String> getPoliticalTopicList()
 	{
-		return null;
+		return politicalTopicList;
 	}
 	
 	/**
@@ -211,7 +209,7 @@ public class Chatbot
 	{
 		boolean isQuiting = false;
 		
-		if(currentInput.equals("quit") || currentInput.equals("exit"))
+		if(currentInput.equals("exit") || currentInput.equals("quit"))
 		{
 			isQuiting = true;
 		}
@@ -233,11 +231,11 @@ public class Chatbot
 			case 0:
 				if(memeChecker(currentChat))
 				{
-					nextConversation = "That meme is the dankest! What else?";
+					nextConversation = "That meme is the dankest! What else would you like to talk about?";
 				}
 				else
 				{
-					nextConversation = "TEST FAILED MEMES";
+					nextConversation = "I think I'd rather talk about politics.";
 				}
 				break;
 			case 1:
@@ -247,7 +245,7 @@ public class Chatbot
 				}				
 				else
 				{
-					nextConversation = "TEST FAILED POLITICS";
+					nextConversation = "I'd rather talk about memes.";
 				}
 				break;
 			case 2:
@@ -257,7 +255,7 @@ public class Chatbot
 				}
 				else
 				{
-					nextConversation = "TEST FAILED CONTENT";
+					nextConversation = "You didn't typed anything...awkward";
 				}
 				break;
 			case 3:
@@ -267,7 +265,7 @@ public class Chatbot
 				}
 				else
 				{
-					nextConversation = "Test failed words";
+					nextConversation = "You typed more than 20 words";
 				}
 				break;
 			case 4:
