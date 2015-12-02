@@ -20,7 +20,7 @@ public class ChatPanel extends JPanel
 		
 		baseLayout = new SpringLayout();
 		chatButton = new JButton("Click to chat");
-		chatTextField = new JTextField("Type to chat");
+		chatTextField = new JTextField("Type to chat", 30);
 		chatTextArea = new JTextArea("Chat Text Area");
 		promptLabel = new JLabel("Chat me away");
 
@@ -40,6 +40,7 @@ public class ChatPanel extends JPanel
 		this.add(promptLabel);
 		chatTextField.setToolTipText("Type here");
 		chatTextArea.setEnabled(false);
+		
 	}
 	
 	private void setUpLayout()
@@ -63,7 +64,7 @@ public class ChatPanel extends JPanel
 				chatTextArea.append("\nUser: " + userText); //Displaying user answer
 				chatTextField.setText("");
 				String response = baseController.userToChatbot(userText); //Sending the text back to chatBot
-				chatTextArea.append("\nChatbot: " + response);
+				chatTextArea.append("\nChatbot: " + response); //Display response
 			}
 		
 		});
