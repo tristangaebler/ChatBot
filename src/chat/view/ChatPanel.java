@@ -20,9 +20,10 @@ public class ChatPanel extends JPanel
 		
 		baseLayout = new SpringLayout();
 		chatButton = new JButton("Click to chat");
-		chatTextField = new JTextField("Type to chat", 30);
+		chatTextField = new JTextField("Type to chat", 15);
 		chatTextArea = new JTextArea("Chat Text Area");
 		promptLabel = new JLabel("Chat me away");
+
 
 		
 		setUpPanel();
@@ -45,12 +46,14 @@ public class ChatPanel extends JPanel
 	
 	private void setUpLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatTextField, -176, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 37, SpringLayout.SOUTH, chatTextField);
-		baseLayout.putConstraint(SpringLayout.WEST, chatTextField, 158, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 146, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatTextArea, -38, SpringLayout.NORTH, chatTextField);
-		baseLayout.putConstraint(SpringLayout.EAST, chatTextArea, 0, SpringLayout.EAST, chatTextField);
+		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 137, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatButton, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatTextField, 36, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatTextField, -6, SpringLayout.NORTH, chatButton);
+		baseLayout.putConstraint(SpringLayout.WEST, chatTextArea, 148, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatTextArea, -35, SpringLayout.NORTH, chatTextField);
+		baseLayout.putConstraint(SpringLayout.NORTH, promptLabel, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, promptLabel, 0, SpringLayout.EAST, chatTextArea);
 	}
 	
 	
