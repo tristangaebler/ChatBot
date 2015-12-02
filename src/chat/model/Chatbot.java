@@ -59,8 +59,8 @@ public class Chatbot
 		this.politicalTopicList.add("benghazi");
 		this.politicalTopicList.add("speaker of the house");
 		this.politicalTopicList.add("election");
-		this.politicalTopicList.add("demoract");
-		this.politicalTopicList.add("republican");
+		this.politicalTopicList.add("Democrat");
+		this.politicalTopicList.add("Republican");
 		this.politicalTopicList.add("liberal");
 		this.politicalTopicList.add("conservative");
 		this.politicalTopicList.add("Trump");

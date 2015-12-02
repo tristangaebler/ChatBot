@@ -41,12 +41,23 @@ public class ChatController
 		//=======REMEMBER========
 		//Cody's variables are not named the same as yours.
 		String conversation = ChatView.grabInput("What would you like too talk about?");
+//		
+//		while(myChatbot.lengthChecker(conversation))
+//		{
+//			conversation = ChatView.grabInput(myChatbot.processConversation(conversation));
+//			
+//		}
+	}
+	
+	public String userToChatbot(String userText)
+	{
+		String response = "";
 		
-		while(myChatbot.lengthChecker(conversation))
-		{
-			conversation = ChatView.grabInput(myChatbot.processConversation(conversation));
-			
-		}
+		if(myChatbot.quitChecker(userText)) shutDown();
+		
+		response = myChatbot.processConversation(userText);
+		
+		return response;
 	}
 
 	public ChatView getChatView()
