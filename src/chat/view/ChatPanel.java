@@ -14,6 +14,12 @@ public class ChatPanel extends JPanel
 	private JTextArea chatTextArea;
 	private JLabel promptLabel;
 	
+	/**
+	 * Constructor initializes all my panel variables.
+	 * setUpPanel(), setUpLayout(), and setUpListeners() need to be in that order.
+	 * @param baseController
+	 * Takes baseController as a parameter and assigns it to an instance of a baseController
+	 */
 	public ChatPanel(ChatController baseController)
 	{
 		this.baseController = baseController;
@@ -42,6 +48,9 @@ public class ChatPanel extends JPanel
 		
 	}
 	
+	/**
+	 * This is all my garbage code
+	 */
 	private void setUpLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.WEST, chatTextField, 36, SpringLayout.WEST, this);
@@ -54,7 +63,11 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, promptLabel, 84, SpringLayout.WEST, this);
 	}
 	
-	
+	/**
+	 * When the chatButton is clicked it grabs the users answer. Then it displays it to the screen.
+	 * Then it sends the text back to the chatBot for it to process the response.
+	 * Then it displays the response
+	 */
 	private void setUpListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
@@ -71,6 +84,10 @@ public class ChatPanel extends JPanel
 		});
 	}
 	
+	/**
+	 * Getters and setters for JTextField
+	 * @return
+	 */
 	public JTextField getChatTextField()
 	{
 		return chatTextField;
