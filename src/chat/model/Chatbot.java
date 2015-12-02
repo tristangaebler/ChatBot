@@ -68,7 +68,7 @@ public class Chatbot
 		this.politicalTopicList.add("Rubio");
 		this.politicalTopicList.add("Fiorina");
 		this.politicalTopicList.add("Sanders");
-		this.politicalTopicList.add("11/8/2016");	
+		this.politicalTopicList.add("11/4/16");	
 	}
 	
 	/**
@@ -102,7 +102,7 @@ public class Chatbot
 		if(currentInput.toLowerCase().contains(content.toLowerCase()))
 		{
 			hasContent = true;
-		}		
+		} 
 		
 		return hasContent;
 	}
@@ -190,7 +190,7 @@ public class Chatbot
 	 */
 	public void setContent(String content)
 	{
-		
+		this.content = content;
 	}
 	
 	public boolean keyboardMashChecker(String currentInput)
@@ -209,9 +209,13 @@ public class Chatbot
 	{
 		boolean isQuiting = false;
 		
-		if(currentInput.equals("exit") || currentInput.equals("quit"))
+		if(currentInput.equals("quit"))
 		{
 			isQuiting = true;
+		} 
+		else if(currentInput.equals("exit")) 
+		{
+			isQuiting = false;
 		}
 		
 		return isQuiting;
@@ -241,7 +245,7 @@ public class Chatbot
 			case 1:
 				if(politicalTopicChecker(currentChat))
 				{
-					nextConversation = "I agree and disagree. What else?";
+					nextConversation = "Whoa politics! I like ike. What about you?";
 				}				
 				else
 				{
