@@ -194,6 +194,7 @@ public class Chatbot
 	}
 	
 	public boolean keyboardMashChecker(String currentInput)
+	
 	{
 		boolean mashTyping = false;
 		
@@ -255,11 +256,11 @@ public class Chatbot
 			case 2:
 				if(contentChecker(currentChat))
 				{
-					nextConversation = "Wow words";
+					nextConversation = "I love that too!";
 				}
 				else
 				{
-					nextConversation = "You didn't typed anything...awkward";
+					nextConversation = "Wanna talk about something else? Maybe memes? Politics?";
 				}
 				break;
 			case 3:

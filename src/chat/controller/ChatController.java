@@ -25,7 +25,7 @@ public class ChatController
 	
 	public void start()
 	{
-		ChatView.showOutput("Hello " + myChatbot.getUserName());
+		//ChatView.showOutput("Hello " + myChatbot.getUserName());
 		chat();
 		
 	}
@@ -40,7 +40,7 @@ public class ChatController
 	{
 		//=======REMEMBER========
 		//Cody's variables are not named the same as yours.
-		String conversation = ChatView.grabInput("What would you like too talk about?");
+		//String conversation = ChatView.grabInput("What would you like too talk about?");
 //		
 //		while(myChatbot.lengthChecker(conversation))
 //		{
