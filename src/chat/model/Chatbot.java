@@ -285,11 +285,11 @@ public class Chatbot
 			case 3:
 				if(currentChat.length() > 20)
 				{
-					nextConversation = "You typed less than 20 words";
+					nextConversation = "You typed more than 20 words";
 				}
 				else
 				{
-					nextConversation = "You typed more than 20 words";
+					nextConversation = "You typed less than 20 words";
 				}
 				break;
 			case 4:
