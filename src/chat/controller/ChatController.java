@@ -23,13 +23,18 @@ public class ChatController
 		baseFrame = new ChatFrame(this);
 	}
 	
+	/**
+	 * This method is called when ChatBot starts. 
+	 */
 	public void start()
 	{
 		//ChatView.showOutput("Hello " + myChatbot.getUserName());
 		chat();
 		
 	}
-	
+	/**
+	 * Shuts down the chatBot program.
+	 */
 	private void shutDown()
 	{
 		ChatView.showOutput("Goodbye" + myChatbot.getUserName() + " it has been a pleasure");
@@ -41,14 +46,19 @@ public class ChatController
 		//=======REMEMBER========
 		//Cody's variables are not named the same as yours.
 		//String conversation = ChatView.grabInput("What would you like too talk about?");
-//		
-//		while(myChatbot.lengthChecker(conversation))
-//		{
-//			conversation = ChatView.grabInput(myChatbot.processConversation(conversation));
-//			
-//		}
+		
+		//while(myChatbot.lengthChecker(conversation))
+		//{
+			//conversation = ChatView.grabInput(myChatbot.processConversation(conversation));
+			
+		//}
 	}
 	
+	/**
+	 * I'm returning the response to the user. 
+	 * @param userText
+	 * @return
+	 */
 	public String userToChatbot(String userText)
 	{
 		String response = "";
@@ -60,6 +70,10 @@ public class ChatController
 		return response;
 	}
 
+	/**
+	 * These are my getters and setters.
+	 * @return
+	 */
 	public ChatView getChatView()
 	{
 		return ChatView;

@@ -127,7 +127,6 @@ public class Chatbot
 		return hasTopic;
 	}
 	
-	
 	/**
 	 * Checks to see that the supplied String value is in the current memesList variable.
 	 * @param currentInput The supplied String to be checked.
@@ -146,6 +145,42 @@ public class Chatbot
 		}
 		
 		return hasMeme;
+	}
+	/**
+	 * Checks to see if the user is mashing his/her keyboard.
+	 * @param currentInput The supplied String is to be checked for mashing.
+	 * @return True/False - return whether they are mashing there keyboard.
+	 */
+	public boolean keyboardMashChecker(String currentInput)
+	{
+		boolean mashTyping = false;
+		
+		if(currentInput.equals("sdf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals(",./"))
+		{
+			mashTyping = true;
+		} 
+		
+		return mashTyping;		
+	}
+	/**
+	 * Checks to see if the user typed "quit" or "exit". If the user does, the program shuts down.
+	 * @param currentInput The supplied String is to be checked for mashing
+	 * @return Returns whether the program is quitting or not - True/False value
+	 */
+	public boolean quitChecker(String currentInput)
+	{
+		boolean isQuiting = false;
+		
+		if(currentInput.equals("quit"))
+		{
+			isQuiting = true;
+		} 
+		else if(currentInput.equals("exit")) 
+		{
+			isQuiting = false;
+		}
+		
+		return isQuiting;
 	}
 	
 	/**
@@ -193,34 +228,8 @@ public class Chatbot
 		this.content = content;
 	}
 	
-	public boolean keyboardMashChecker(String currentInput)
-	
-	{
-		boolean mashTyping = false;
-		
-		if(currentInput.equals("sdf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals(",./"))
-		{
-			mashTyping = true;
-		} 
-		
-		return mashTyping;		
-	}
-	
-	public boolean quitChecker(String currentInput)
-	{
-		boolean isQuiting = false;
-		
-		if(currentInput.equals("quit"))
-		{
-			isQuiting = true;
-		} 
-		else if(currentInput.equals("exit")) 
-		{
-			isQuiting = false;
-		}
-		
-		return isQuiting;
-	}
+
+
 	
 	public String processConversation(String currentChat)
 	{
