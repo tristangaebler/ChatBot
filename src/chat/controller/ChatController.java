@@ -15,6 +15,9 @@ public class ChatController
 	private Chatbot myChatbot;
 	private ChatFrame baseFrame;
 
+	/**
+	 * Constructor that initializes all my class variables
+	 */
 	public ChatController()
 	{
 		ChatView = new ChatView();
