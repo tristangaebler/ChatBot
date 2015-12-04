@@ -28,7 +28,7 @@ public class ChatFrame extends JFrame
 	{
 		this.setContentPane(basePanel);
 		this.setSize(500, 500);
-		this.setBackground(Color.RED);
+		this.setBackground(Color.orange);
 		this.setTitle("Chat Window");
 		this.setResizable(false);
 		this.setVisible(true);
