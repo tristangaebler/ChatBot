@@ -29,7 +29,10 @@ public class Chatbot
 		buildMemesList();
 		buildPoliticalTopicsList();
 	}
-	
+	/**
+	 * This adds content to my memes ArrayList.
+	 * These will be used to compare to the users answer.
+	 */
 	private void buildMemesList() 
 	{
 		this.memesList.add("cute animals");
@@ -45,7 +48,10 @@ public class Chatbot
 		this.memesList.add("tai lopez");
 		this.memesList.add("lamborghini");
 	}
-	
+	/**
+	 * This adds content to my politicalTopics ArrayList.
+	 * These will be used to compare to the users answer.
+	 */
 	private void buildPoliticalTopicsList()
 	{
 		this.politicalTopicList.add("immigration");
@@ -230,7 +236,11 @@ public class Chatbot
 	
 
 
-	
+	/**
+	 * This method facilitates the conversation between chatBot and the computer. It guides where the conversation is going.
+	 * @param currentChat
+	 * @return
+	 */
 	public String processConversation(String currentChat)
 	{
 		String nextConversation = "oh, well that's awkward...we have nothing to talk about";
