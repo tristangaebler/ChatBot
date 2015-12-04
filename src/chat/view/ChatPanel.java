@@ -22,7 +22,7 @@ public class ChatPanel extends JPanel
 	 */
 	public ChatPanel(ChatController baseController)
 	{
-		this.baseController = baseController;
+		this.baseController = baseController; //Controller reference 
 		
 		baseLayout = new SpringLayout();
 		chatButton = new JButton("Click to chat");
@@ -36,6 +36,9 @@ public class ChatPanel extends JPanel
 		
 	}
 	
+	/**
+	 * All my GUI components
+	 */
 	private void setUpPanel()
 	{
 		this.setLayout(baseLayout);
@@ -45,7 +48,6 @@ public class ChatPanel extends JPanel
 		this.add(promptLabel);
 		chatTextField.setToolTipText("Type here");
 		chatTextArea.setEnabled(false);
-		
 	}
 	
 	/**
