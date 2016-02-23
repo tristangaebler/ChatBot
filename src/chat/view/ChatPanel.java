@@ -1,9 +1,18 @@
 package chat.view;
 
-import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SpringLayout;
+
 import chat.controller.ChatController;
-import java.awt.Font;
-import java.awt.event.*;
 
 public class ChatPanel extends JPanel
 {
@@ -13,6 +22,10 @@ public class ChatPanel extends JPanel
 	private SpringLayout baseLayout;
 	private JTextArea chatTextArea;
 	private JLabel promptLabel;
+	private JScrollPane textPane;
+	private JButton tweetButton;
+	private JButton saveButton;
+	private JButton loadButton;
 	
 	/**
 	 * Constructor initializes all my panel variables.
@@ -29,11 +42,24 @@ public class ChatPanel extends JPanel
 		chatTextField = new JTextField("Type to chat", 15);
 		chatTextArea = new JTextArea("Lets talk about memes, politics, or things that you like.");
 		promptLabel = new JLabel("Chat me away");
-
+		
+		
+		
+		setUpPane();
 		setUpPanel();
 		setUpLayout();
 		setUpListeners();
 		
+	}
+	
+	private void setUpPane()
+	{	
+		chatTextArea.setLineWrap(true);
+		chatTextArea.setWrapStyleWord(true);
+		chatTextArea.setEditable(false);
+		textPane = new JScrollPane(chatTextArea);
+		textPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		textPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 	}
 	
 	/**
@@ -42,12 +68,14 @@ public class ChatPanel extends JPanel
 	private void setUpPanel()
 	{
 		this.setLayout(baseLayout);
-		this.add(chatTextArea);
 		this.add(chatButton);
 		this.add(chatTextField);
 		this.add(promptLabel);
+		this.add(textPane);
+		this.add(tweetButton);
+		this.add(saveButton);
+		this.add(loadButton);
 		chatTextField.setToolTipText("Type here");
-		chatTextArea.setEnabled(false);
 	}
 	
 	/**
@@ -63,6 +91,10 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, promptLabel, 84, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatTextArea, 19, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, chatTextArea, -33, SpringLayout.NORTH, chatTextField);
+		baseLayout.putConstraint(SpringLayout.NORTH, textPane, 20, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, textPane, 100, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, textPane, 200, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, textPane, -20, SpringLayout.EAST, this);
 	}
 	
 	/**
