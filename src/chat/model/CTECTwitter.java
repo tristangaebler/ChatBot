@@ -5,7 +5,7 @@ import twitter4j.*;
 /**
  * 
  * @author Tristan Gaebler
- * @version 0.1
+ * @version 0.2
  * 
  * This is the CTECTwitter class that will gather and sort information. It will use the Twitter API to gather data, and java to sort that data. Going to interact with twitter.
  *
