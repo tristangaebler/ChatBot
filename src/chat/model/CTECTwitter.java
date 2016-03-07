@@ -1,7 +1,7 @@
 package chat.model;
 
 import java.util.ArrayList;
-
+import chat.controller.*;
 import twitter4j.*;
 /**
  * 
@@ -17,9 +17,12 @@ public class CTECTwitter
 	private ArrayList<Status> statusList;
 	private ArrayList<String> wordList;
 	private Twitter chatbotTwitter;
+	private ChatController baseController;
 	
-	public CTECTwitter()
+	public CTECTwitter(ChatController baseController)
 	{
+		this.baseController = baseController;
+		chatbotTwitter = TwitterFactory.getSingleton();
 		statusList = new ArrayList<Status>();
 		wordList = new ArrayList<String>();
 		
@@ -33,7 +36,7 @@ public class CTECTwitter
 		}
 		catch (TwitterException e)
 		{
-			e.printStackTrace();
+			baseController.handleErrors("Error caused the death of the program. How does it feel now that you murdered a java program.");
 		}
 	}
 	
