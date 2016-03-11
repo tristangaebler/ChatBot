@@ -1,12 +1,17 @@
 package chat.model;
 
 import java.util.ArrayList;
-import chat.controller.*;
-import twitter4j.*;
+
+import twitter4j.Paging;
+import twitter4j.Status;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import chat.controller.ChatController;
 /**
  * 
  * @author Tristan Gaebler
- * @version 0.4
+ * @version 0.6
  * 
  * This is the CTECTwitter class that will gather and sort information. It will use the Twitter API to gather data, and java to sort that data. Going to interact with twitter.
  *
@@ -39,5 +44,29 @@ public class CTECTwitter
 			baseController.handleErrors("Error caused the death of the program. How does it feel now that you murdered a java program.");
 		}
 	}
-	
+
+	public void loadTweets(String twitterHandle) throws TwitterException
+	{
+		Paging statusPage = new Paging(1, 200);
+		int page = 1;
+		while(page <= 10)
+		{
+			statusPage.setPage(page);
+			statusList.addAll(chatbotTwitter.getUserTimeline(twitterHandle, statusPage));
+			page++;
+			
+		}
+		
+		for(Status currentStatus : statusList)
+		{
+			String [] tweetText = currentStatus.getText().split(" ");
+			for(String word : tweetText) 
+			{
+				wordList.add(removePunctuation(word).toLowerCase());
+			}
+		}
+		
+		removeCommonEnglishWords(wordList);
+		removeEmptyText();
+	}
 }
