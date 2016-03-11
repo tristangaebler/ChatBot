@@ -44,6 +44,13 @@ public class ChatController
 		chatTwitter.sendTweet(tweetText);
 	}
 	
+	public String analyze(String userName)
+	{
+		String userAnalysis = "The Twitter user " + userName + "has...";
+		
+		return userAnalysis;
+	}
+	
 	public void handleErrors(String errorMessage)
 	{
 		ChatView.showOutput(errorMessage);
