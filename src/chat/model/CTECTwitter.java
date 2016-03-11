@@ -62,11 +62,26 @@ public class CTECTwitter
 			String [] tweetText = currentStatus.getText().split(" ");
 			for(String word : tweetText) 
 			{
-				wordList.add(removePunctuation(word).toLowerCase());
+				wordList.add(removePuncuation(word).toLowerCase());
 			}
 		}
 		
 		removeCommonEnglishWords(wordList);
 		removeEmptyText();
+	}
+	
+	private String removePuncuation(String word)
+	{
+		return null;
+	}
+	
+	private void removeCommonEnglishWords(ArrayList<String> text)
+	{
+		
+	}
+	
+	private void removeEmptyText()
+	{
+		
 	}
 }
