@@ -89,6 +89,12 @@ public class CTECTwitter
 		return scrubbedString;
 	}
 	
+	/*
+	 * March 15, 2016
+	 * Today I learned about analysing tweets. The way we analysis tweets is through nested loops. When we click the
+	 * analysis twitter button, the first method to come into action is the listener. Then from the listener, we go to the analyze method. After analysis we go to the topResults method. From topResults we get wordList, 
+	 * which has been edited by removeCommonEnglishWords, removeEmptyText, and importWordsToArray.
+	 */
 	@SuppressWarnings("unchecked")
 	private List removeCommonEnglishWords(ArrayList<String> wordList)
 	{
