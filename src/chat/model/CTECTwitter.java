@@ -86,11 +86,26 @@ public class CTECTwitter
 		return scrubbedString;
 	}
 	
+	@SuppressWarnings("unchecked")
 	private void removeCommonEnglishWords(ArrayList<String> text)
 	{
+		String[] boringWords = importWordsToArray();
 		
+		for(int count = 0; count < wordList.size(); count++)
+		{
+			for(int removeSpot = 0; removeSpot < boringWords.length; removeSpot++)
+			{
+				if(wordList.get(count).equalsIgnoreCase(boringWords[removeSpot]))
+				{
+					wordList.remove(count);
+					count--;
+					removeSpot = boringWords.length;
+				}
+			}
+		}
 	}
 	
+	//Removes empty text entries from the tweetTexts list. 
 	private void removeEmptyText()
 	{
 		for(int spot = 0; spot < wordList.size(); spot++)
@@ -98,7 +113,8 @@ public class CTECTwitter
 			if(wordList.get(spot).equals(""))
 			{
 				wordList.remove(spot);
-				spot--;
+				spot--; //Go backward to check
+				//jake and jake 
 			}
 		}
 	}
