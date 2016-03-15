@@ -164,9 +164,13 @@ public class CTECTwitter
 		
 		for(int spot = 0; spot < wordList.size(); spot++)
 		{
-			int wordUseCount = 0;
-			for(int index = 0; spot < wordList.size(); index++)
+			int wordUseCount = 1;
+			for(int index = spot + 1; spot < wordList.size(); index++)
 			{
+				if(wordList.get(index).equals(wordList.get(spot)));
+				{
+					wordUseCount++;
+				}
 				if(wordUseCount > topCount)
 				{
 					topCount = wordUseCount;
