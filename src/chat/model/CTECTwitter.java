@@ -77,7 +77,7 @@ public class CTECTwitter
 		
 		for(int i = 0; i < word.length(); i++)
 		{
-			if(punctuation.indexOf(word.charAt(i)) == -1)
+			if(punctuation.indexOf(word.charAt(i)) == -1) //Check if the punctuation is there and eleminate
 			{
 				scrubbedString += word.charAt(i);
 			}
@@ -93,6 +93,13 @@ public class CTECTwitter
 	
 	private void removeEmptyText()
 	{
-		
+		for(int spot = 0; spot < wordList.size(); spot++)
+		{
+			if(wordList.get(spot).equals(""))
+			{
+				wordList.remove(spot);
+				spot--;
+			}
+		}
 	}
 }
