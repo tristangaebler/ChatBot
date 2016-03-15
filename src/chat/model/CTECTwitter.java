@@ -59,7 +59,7 @@ public class CTECTwitter
 		
 		for(Status currentStatus : statusList)
 		{
-			String [] tweetText = currentStatus.getText().split(" ");
+			String [] tweetText = currentStatus.getText().split(" "); //The split method will make a string and put them into an array 
 			for(String word : tweetText) 
 			{
 				wordList.add(removePuncuation(word).toLowerCase());
@@ -72,7 +72,18 @@ public class CTECTwitter
 	
 	private String removePuncuation(String word)
 	{
-		return null;
+		String punctuation = ".,?;:\"(){}^[]<>-";
+		String scrubbedString ="";
+		
+		for(int i = 0; i < word.length(); i++)
+		{
+			if(punctuation.indexOf(word.charAt(i)) == -1)
+			{
+				scrubbedString += word.charAt(i);
+			}
+		}
+		
+		return scrubbedString;
 	}
 	
 	private void removeCommonEnglishWords(ArrayList<String> text)

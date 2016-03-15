@@ -3,7 +3,6 @@ package chat.view;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,21 +37,14 @@ public class ChatPanel extends JPanel
 	public ChatPanel(ChatController baseController)
 	{
 		this.baseController = baseController; //Controller reference 
-		
 		baseLayout = new SpringLayout();
 		chatButton = new JButton("Click to chat");
-	
 		chatTextField = new JTextField("Type to chat", 15);
-	
-
 		chatTextArea = new JTextArea("Lets talk about memes, politics, or things that you like.");
 		promptLabel = new JLabel("Chat me away");
 		tweetButton = new JButton("Click to send tweet");
-
 		analyzeTwitterButton = new JButton("Analyze Twitter");
 
-	
-	
 		setUpPane();
 		setUpPanel();
 		setUpLayout();
