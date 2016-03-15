@@ -1,6 +1,8 @@
 package chat.model;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 import twitter4j.Paging;
 import twitter4j.Status;
@@ -87,7 +89,7 @@ public class CTECTwitter
 	}
 	
 	@SuppressWarnings("unchecked")
-	private void removeCommonEnglishWords(ArrayList<String> text)
+	private List removeCommonEnglishWords(ArrayList<String> wordList)
 	{
 		String[] boringWords = importWordsToArray();
 		
@@ -103,6 +105,9 @@ public class CTECTwitter
 				}
 			}
 		}
+		//removeTwitterUsernamesFromList(wordList);
+		
+		return wordList;
 	}
 	
 	//Removes empty text entries from the tweetTexts list. 
@@ -118,4 +123,42 @@ public class CTECTwitter
 			}
 		}
 	}
+	
+	private String[] importWordsToArray()
+	{
+		String [] boringWords;
+		int wordCount = 0;
+		try
+		{
+			Scanner wordFile = new Scanner(new File("commonWords.txt"));
+			while(wordFile.hasNext())
+			{
+				wordCount++;
+				wordFile.next();
+			}
+			wordFile.reset();
+			boringWords = new String[wordCount];
+			int boringWordCount = 0;
+			while(wordFile.hasNext())
+			{
+				boringWords[boringWordCount] = wordFile.next();
+				boringWordCount++;
+			}
+			wordFile.close();
+			
+		}
+		catch(FileNotFoundExcepion e)
+		{
+			return new String[0];
+		}
+		
+		return boringWords;
+	}
 }
+
+
+
+
+
+
+
