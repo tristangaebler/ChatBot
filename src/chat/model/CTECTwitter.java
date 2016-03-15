@@ -1,9 +1,10 @@
 package chat.model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import twitter4j.Paging;
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -147,12 +148,23 @@ public class CTECTwitter
 			wordFile.close();
 			
 		}
-		catch(FileNotFoundExcepion e)
+		catch(FileNotFoundException e)
 		{
 			return new String[0];
 		}
 		
 		return boringWords;
+	}
+	
+	public String topResults(List<String> wordList)
+	{
+		String tweetResults = "";
+		int topWordLocation = 0;
+		int wordUseCount = 0;
+		
+		tweetResults = "The top word in the tweet was " + wordList.get(topWordLocation) + " and it was used " + wordUseCount + " times!";
+		
+		return tweetResults;
 	}
 }
 
