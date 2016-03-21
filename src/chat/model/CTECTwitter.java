@@ -191,9 +191,9 @@ public class CTECTwitter
 	public String sampleInvestigation()
 	{
 		String results = "";
-		Query query = new Query("bioinformatics");
+		Query query = new Query("University Of Utah");
 		query.setCount(100);
-		query.setGeoCode(new GeoLocation(40.587521, -111.86978), 5, Query.MILES);
+		query.setGeoCode(new GeoLocation(40.587521, -111.86978), 20, Query.MILES);
 		query.setSince("2016-1-1");
 		
 		try

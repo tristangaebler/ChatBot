@@ -61,6 +61,16 @@ public class ChatController
 		return userAnalysis;
 	}
 	
+	public String investigateTweet() 
+	{
+		String userInvestigation = "Investigation ";
+		
+		userInvestigation += chatTwitter.sampleInvestigation();
+		
+		
+		return userInvestigation;
+	}
+	
 	public void handleErrors(String errorMessage)
 	{
 		ChatView.showOutput(errorMessage);

@@ -3,6 +3,7 @@ package chat.view;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SpringLayout;
 
+import twitter4j.TwitterException;
 import chat.controller.ChatController;
 
 public class ChatPanel extends JPanel
@@ -27,6 +29,7 @@ public class ChatPanel extends JPanel
 	private JButton saveButton;
 	private JButton loadButton;
 	private JButton analyzeTwitterButton;
+	private JButton InvestigateButton;
 	
 	/**
 	 * Constructor initializes all my panel variables.
@@ -44,6 +47,7 @@ public class ChatPanel extends JPanel
 		promptLabel = new JLabel("Chat me away");
 		tweetButton = new JButton("Click to send tweet");
 		analyzeTwitterButton = new JButton("Analyze Twitter");
+		InvestigateButton = new JButton("Investigate");
 
 		setUpPane();
 		setUpPanel();
@@ -74,6 +78,7 @@ public class ChatPanel extends JPanel
 		this.add(textPane);
 		this.add(tweetButton);
 		this.add(analyzeTwitterButton);
+		this.add(InvestigateButton);
 		//this.add(tweetButton);
 		//this.add(saveButton);
 		//this.add(loadButton);
@@ -138,6 +143,16 @@ public class ChatPanel extends JPanel
 			{
 				String user = chatTextField.getText();
 				String results = baseController.analyze(user);
+				chatTextArea.setText(results);
+			}
+		});
+		
+		InvestigateButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent clickEvent)
+			{
+				String user = chatTextField.getText();
+				String results = baseController.investigateTweet();
 				chatTextArea.setText(results);
 			}
 		});
